@@ -4,6 +4,7 @@ import { UserType } from '../../types';
 import { login, logout } from '../../reducers/user';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 	const user = useSelector<ReducerType, UserType>((state) => {
@@ -23,9 +24,13 @@ const Login = () => {
 	return (
 		<>
 			{user.isLogin ? (
-				<button onClick={handleLogout}>로그아웃</button>
+				<Link to="/user/profile">
+					<button onClick={handleLogout}>로그아웃</button>
+				</Link>
 			) : (
-				<button onClick={handleLogin}>로그인</button>
+				<Link to="/user/profile">
+					<button onClick={handleLogin}>로그인</button>
+				</Link>
 			)}
 		</>
 	);

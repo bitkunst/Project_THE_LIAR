@@ -1,12 +1,23 @@
 import React from 'react';
-import Login from './User';
+import styled from 'styled-components';
+import MainNav from '../Components/MainNav';
+import Responsive from '../Components/Responsive';
+
+const Logo = styled.h1`
+	font-family: 'arial';
+	font-size: 50px;
+`;
+
+const Wrapper = styled(Responsive)`
+	background-color: #bab3b3;
+`;
 
 const Main = () => {
 	return (
-		<>
-			<h1>Hello Liar</h1>
-			<Login />
-		</>
+		<Wrapper>
+			<Logo>FREAKIN&apos; AWESOME LIAR GAME</Logo>
+			<MainNav />
+		</Wrapper>
 	);
 };
 

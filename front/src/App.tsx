@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainNav from './Components/MainNav';
+import Main from './Pages';
 import Login from './Pages/User';
 import Profile from './Pages/User/Profile';
 import Play from './Pages/Play';
@@ -12,7 +12,7 @@ function App() {
 		<>
 			<Router>
 				<Routes>
-					<Route path="/" element={<MainNav />} />
+					<Route path="/" element={<Main />} />
 					<Route path="/user" element={<Login />} />
 					<Route path="/user/profile" element={<Profile />} />
 					<Route path="/play" element={<Play />} />

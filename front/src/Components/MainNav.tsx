@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const MainNav = () => {
 	return (
-		<div>
-			<h1>Hi liar</h1>
-			<Link to="/user">login</Link>
-		</div>
+		<Link to="/user">
+			<button>라이어게임 하러 가실래요?</button>
+		</Link>
 	);
 };
 

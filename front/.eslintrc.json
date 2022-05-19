@@ -14,6 +14,7 @@
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"project": "./tsconfig.json",
+		"tsconfigRootDir": "/Users/yjlee/Desktop/workspace/project_2022/pj4_react_liargame/Project_THE_LIAR/front",
 		"ecmaFeatures": {
 			"jsx": true
 		},

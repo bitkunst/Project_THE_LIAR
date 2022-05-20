@@ -27,10 +27,8 @@ const loginAPI = async (payload: LoginData) => {
 
 function* loginReq(action: ActionType) {
 	try {
-		const response: AxiosResponse = yield call<any>(
-			loginAPI,
-			action.payload
-		);
+		const payload: LoginData = action.payload;
+		const response: AxiosResponse = yield call(loginAPI, payload);
 		console.log(response.data);
 		yield put({
 			type: LOCAL_LOGIN_SUCCESS,

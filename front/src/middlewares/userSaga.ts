@@ -7,16 +7,21 @@ import {
 	KAKAO_LOGIN_SUCCESS,
 	KAKAO_LOGIN_FAILURE,
 } from '../reducers/user';
-import { ActionType, AxiosResponse } from '../types';
+import { ActionType, AxiosResponse, LoginData } from '../types';
 import axios from 'axios';
 
-const loginAPI = async (payload: string) => {
+const loginAPI = async (payload: LoginData) => {
 	// back-end axios 요청
-	console.log('이거', payload);
-	const result = await axios.post(
+	const result: AxiosResponse = await axios.post(
 		'http://localhost:4000/api/user/login',
-		payload
+		payload,
+		{
+			headers: {
+				'Content-type': 'application/json',
+			},
+		}
 	);
+	console.log(result);
 	return result;
 };
 
@@ -43,6 +48,6 @@ function* loginReq(action: ActionType) {
 
 export default function* userSaga() {
 	yield takeLatest(LOCAL_LOGIN_REQUEST, loginReq);
-	console.log('gdgd');
+	// console.log('gdgd');
 	// yield takeLatest(KAKAO_LOGIN_REQUEST, kakaologReq);
 }

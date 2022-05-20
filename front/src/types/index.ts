@@ -31,3 +31,8 @@ export interface AxiosResponse<T = any> {
 }
 
 export type MsgType = string;
+
+export interface LoginData {
+	user_id: string;
+	user_pw: string;
+}

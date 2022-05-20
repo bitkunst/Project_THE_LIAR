@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Props } from '../types';
 
-const ResponsiveTemplate = styled.div`
-	padding: 0 1rem;
+export const ResponsiveTemplate = styled.div`
 	width: 1024px;
+	height: 100vh;
 	margin: 0 auto;
+	background-color: black;
 
 	@media screen and (max-width: 1024px) {
 		width: 768px;
@@ -19,9 +20,6 @@ const ResponsiveTemplate = styled.div`
 		width: 100vw;
 	}
 `;
-
-const Responsive = ({ children }: Props) => {
+export const Responsive = ({ children }: Props) => {
 	return <ResponsiveTemplate>{children}</ResponsiveTemplate>;
 };
-
-export default Responsive;

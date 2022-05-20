@@ -27,7 +27,7 @@ module.exports = {
 		'prettier/prettier': 'warn',
 		'no-unused-vars': 'warn',
 		'@typescript-eslint/no-unsafe-member-access': 'warn',
-		'@typescript-eslint/no-unsafe-assignment': 'warn',
-		'@typescript-eslint/no-floating-promises': 'warn',
+		'@typescript-eslint/no-unsafe-assignment': 'off',
+		'@typescript-eslint/no-floating-promises': 'off',
 	},
 };

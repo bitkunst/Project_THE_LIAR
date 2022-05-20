@@ -13,6 +13,7 @@
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
+		"tsconfigRootDir": "/home/bitkunst/team_project3/front/",
 		"project": "./tsconfig.json",
 		"tsconfigRootDir": "/Users/yjlee/Desktop/workspace/project_2022/pj4_react_liargame/Project_THE_LIAR/front",
 		"ecmaFeatures": {

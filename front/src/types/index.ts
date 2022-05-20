@@ -1,3 +1,4 @@
+import { AxiosRequestConfig } from 'axios';
 import React from 'react';
 
 export interface Props {
@@ -5,12 +6,28 @@ export interface Props {
 }
 
 export interface UserType {
+	me: {
+		user_id: string;
+		nickname: string;
+		provider: string;
+	};
 	isLogin: boolean;
+	error: number;
+	loading: boolean;
 }
 
 export interface ActionType {
 	type: string;
-	payload: string;
+	payload: any;
 }
 
-export type MsgType = st;
+export interface AxiosResponse<T = any> {
+	data: T;
+	status: number;
+	statusText: string;
+	headers: any;
+	config: AxiosRequestConfig;
+	request?: any;
+}
+
+export type MsgType = string;

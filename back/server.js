@@ -7,6 +7,8 @@ const router = require('./routes');
 const app = express();
 const httpServer = http.createServer(app);
 const webSocket = require('./socket');
+const passport = require('passport');
+const passportConfig = require('./passport');
 const ws = SocketIO(httpServer, {
 	cors: {
 		origin: true,
@@ -24,6 +26,9 @@ app.use(
 		credentials: true,
 	})
 );
+
+app.use(passport.initialize()); // passport 장착
+passportConfig(); // 모든 전략을 모아둔파일을 실행하기.
 
 app.use(router);
 

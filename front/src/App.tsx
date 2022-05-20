@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './Pages';
-import Login from './Pages/User';
+import Login from './Pages/User/Login';
 import Profile from './Pages/User/Profile';
 import Play from './Pages/Play';
 import Random from './Pages/Play/Random';

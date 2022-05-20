@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: 1,
 			},
 			friends: {
-				type: DataTypes.STRING,
+				type: DataTypes.TEXT,
 				allowNull: true,
 			},
 		},

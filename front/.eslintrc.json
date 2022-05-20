@@ -13,6 +13,7 @@
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
+		"tsconfigRootDir": "/home/bitkunst/team_project3/front/",
 		"project": "./tsconfig.json",
 		"ecmaFeatures": {
 			"jsx": true

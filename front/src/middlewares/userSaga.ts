@@ -16,10 +16,11 @@ const loginAPI = async (payload: string): Promise<boolean> => {
 
 function* loginReq(action: ActionType) {
 	try {
-		const result: ReturnType<typeof loginAPI> = yield call<any>(
+		const result: ReturnType<typeof loginAPI> = yield call(
 			loginAPI,
 			action.payload
 		);
+		console.log(result);
 		yield put<ActionType>({
 			type: LOGIN_SUCCESS,
 			payload: '',

@@ -1,7 +1,7 @@
 module.exports = {
 	env: {
 		browser: true,
-		es2021: true,
+		es6: true,
 		node: true,
 	},
 	extends: [
@@ -21,13 +21,13 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	ignorePatterns: ['node_modules/'],
+	ignorePatterns: ['node_modules/', '.eslintrc.js'],
 	plugins: ['react', '@typescript-eslint', 'prettier'],
 	rules: {
 		'prettier/prettier': 'warn',
 		'no-unused-vars': 'warn',
 		'@typescript-eslint/no-unsafe-member-access': 'warn',
-		'@typescript-eslint/no-unsafe-assignment': 'warn',
-		'@typescript-eslint/no-floating-promises': 'warn',
+		'@typescript-eslint/no-unsafe-assignment': 'off',
+		'@typescript-eslint/no-floating-promises': 'off',
 	},
 };

@@ -13,4 +13,4 @@ export interface ActionType {
 	payload: string;
 }
 
-export type MsgType = st;
+export type MsgType = string;

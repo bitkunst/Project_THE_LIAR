@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainNav from '../Components/MainNav';
-import Responsive from '../Components/Responsive';
+import { Responsive } from '../Components/Responsive';
 
 const Logo = styled.h1`
 	font-family: 'arial';

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, Navigate } from 'react-router-dom';
 import { ReducerType } from '../../reducers';
 import { UserType } from '../../types';
 import { local_login, local_logout } from '../../reducers/user';
@@ -7,6 +7,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 const Login = () => {
+	const navigate = useNavigate();
 	const user = useSelector<ReducerType, UserType>((state) => {
 		return state.user;
 	});

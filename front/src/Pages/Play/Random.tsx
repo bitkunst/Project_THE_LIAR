@@ -9,12 +9,14 @@ import {
 	MessageInput,
 } from '@chatscope/chat-ui-kit-react';
 import './style.css';
-import MemProfile from '../../Components/PlayChat/MemProfile';
+import { MemProfile, Nick, Level } from '../../Components/PlayChat/MemProfile';
 import { Responsive, ResponsiveTemplate } from '../../Components/Responsive';
+import { InfoBoxRed, InfoBoxBlack } from '../../Components/InfoBox';
+import { BtnGrey, BtnBlue, BtnWhite } from '../../Components/Button';
 
 const ResponsiveFlex = styled(ResponsiveTemplate)`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	height: 90vh;
 `;
 
@@ -31,48 +33,6 @@ const Random = () => {
 		'asdf',
 		'hi',
 		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'asdf',
-		'hi',
-		'asdf',
-		'4567',
-		'hi',
-		'asdf',
-		'asdf',
-		'안녕하세요',
-		'안녕하세요',
-		'안녕하세요',
-		'안녕하세요',
-		'안녕하세요',
 	];
 
 	const Items = () => {
@@ -83,37 +43,71 @@ const Random = () => {
 
 	return (
 		<Responsive>
-			<div className="chatHeader"></div>
+			<div className="chatHeader">
+				<InfoBoxRed>주제 : 동물 </InfoBoxRed>
+				<InfoBoxBlack>답: 펭귄</InfoBoxBlack>
+				<div className="timer">남은시간 00:15</div>
+			</div>
 			<ResponsiveFlex>
-				<div style={{ background: 'red', width: '15%' }}>hi</div>
-				<MainContainer
-					style={{
-						background: 'red',
-						position: 'relative',
-						width: '70%',
-						height: '100%',
-					}}
-				>
+				<div className="chat-left-side">
+					<MemProfile>
+						<img src="/img/dog.png" className="profile-img" />
+						<Nick>경일 잉구</Nick>
+						<Level>lv.2</Level>
+					</MemProfile>
+					<MemProfile>
+						<img src="/img/dog.png" className="profile-img" />
+						<Nick>경일 주찬</Nick>
+						<Level>lv.2</Level>
+					</MemProfile>
+					<MemProfile>
+						<img src="/img/dog.png" className="profile-img" />
+						<Nick>경일 재원</Nick>
+						<Level>lv.2</Level>
+					</MemProfile>
+					<MemProfile>
+						<img src="" className="profile-img" />
+						<Nick>이름길게적기기기기기ㅣㄱ </Nick>
+						<Level>lv.2</Level>
+					</MemProfile>
+				</div>
+				<MainContainer className="main-container">
 					<ChatContainer>
 						<MessageList>
-							<MessageList.Content
-								style={{
-									display: 'flex',
-									flexDirection: 'column',
-									textAlign: 'center',
-									fontSize: '2vw',
-								}}
-							>
-								<ul className="color">{Items()}</ul>
+							<MessageList.Content className="main-content">
+								<ul>{Items()}</ul>
 							</MessageList.Content>
 						</MessageList>
-						<MessageInput
-							placeholder="Type message here"
-							style={{ fontSize: '2vw' }}
-						/>
+						<MessageInput placeholder="내용을 입력해주세요" />
 					</ChatContainer>
 				</MainContainer>
-				<div style={{ background: 'blue', width: '15%' }}>hi</div>
+				<div className="chat-right-side">
+					<MemProfile>
+						<img src="/img/dog.png" className="profile-img" />
+						<Nick>경일 잉구</Nick>
+						<Level>lv.2</Level>
+					</MemProfile>
+					<MemProfile>
+						<img src="/img/dog.png" className="profile-img" />
+						<Nick>경일 주찬</Nick>
+						<Level>lv.2</Level>
+					</MemProfile>
+					<MemProfile>
+						<img src="/img/dog.png" className="profile-img" />
+						<Nick>경일 재원</Nick>
+						<Level>lv.2</Level>
+					</MemProfile>
+					<MemProfile>
+						<img src="" className="profile-img" />
+						<Nick>이름길게적기기기기기ㅣㄱ </Nick>
+						<Level>lv.2</Level>
+					</MemProfile>
+					<div className="btngp">
+						<BtnBlue>친구초대</BtnBlue>
+						<BtnWhite>게임준비</BtnWhite>
+						<BtnGrey>나가기</BtnGrey>
+					</div>
+				</div>
 			</ResponsiveFlex>
 		</Responsive>
 	);

@@ -6,6 +6,7 @@ import Profile from './Pages/User/Profile';
 import Play from './Pages/Play';
 import Random from './Pages/Play/Random';
 import Friends from './Pages/Play/Friends';
+import 'antd/dist/antd.css';
 
 function App() {
 	return (

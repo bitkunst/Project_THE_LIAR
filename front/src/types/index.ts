@@ -5,6 +5,10 @@ export interface Props {
 	children: React.ReactNode;
 }
 
+export interface NavType {
+	to: string;
+}
+
 export interface UserType {
 	me: {
 		user_id: string;

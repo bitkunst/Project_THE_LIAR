@@ -6,16 +6,21 @@ const SocketIO = require('socket.io');
 const router = require('./routes');
 const app = express();
 const httpServer = http.createServer(app);
-const webSocket = require('./socket');
+const Socket1 = require('./socket_random');
 const passport = require('passport');
 const passportConfig = require('./passport');
-const ws = SocketIO(httpServer, {
+const io = SocketIO(httpServer, {
 	cors: {
-		origin: true,
+		origin: 'http://localhost:3000',
 		credentials: true,
 	},
+	requestCert: true,
+	secure: true,
+	rejectUnauthorized: false,
+	transports: ['websocket'],
 });
-webSocket(ws);
+const randomRoom = io.of('/api/play/random');
+Socket1(randomRoom);
 
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));

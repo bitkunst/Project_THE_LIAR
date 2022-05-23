@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, Navigate } from 'react-router-dom';
 import { ReducerType } from '../../reducers';
-import { UserType, Nav } from '../../types';
+import { UserType, NavType } from '../../types';
 import { local_login, local_logout } from '../../reducers/user';
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const Login = ({ to }: Nav) => {
+const Login = ({ to }: NavType) => {
 	const user = useSelector<ReducerType, UserType>((state) => {
 		return state.user;
 	});
@@ -54,7 +54,6 @@ const Login = ({ to }: Nav) => {
 					name="user_pw"
 					onChange={handleChange}
 				></input>
-
 				<br />
 				<input type="submit" value="로그인" disabled={submit}></input>
 				<a href="http://localhost:4000/auth/kakao">카카오로그인</a>

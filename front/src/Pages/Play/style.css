@@ -1,19 +1,88 @@
-.center {
-	display: 'flex';
-	flex-direction: 'column';
-	justify-content: 'center';
-	height: '100%';
-	text-align: 'center';
-	font-size: '1em';
+.chatHeader {
+	height: 10vh;
+	display: flex;
+	align-items: center;
 }
 
-.chatHeader {
-	background: yellow;
-	height: 10vh;
+.timer {
+	margin-left: 20px;
+}
+
+.main-container {
+	position: relative;
+	width: 70%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.main-content {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-size: 1.5vw;
 }
 
 .chat-left-side {
+	width: 14%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.color > li {
+.chat-right-side {
+	width: 14%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cs-message-input__content-editor-wrapper {
+	background-color: #fff;
+	border: solid 1px #eee;
+	margin-left: 5px;
+}
+
+.cs-message-input__content-editor {
+	background-color: #fff;
+	font-size: 1vw;
+}
+
+.ps__thumb-y {
+	background-color: #eee;
+}
+
+.cs-button--send {
+	color: #54b9ca;
+}
+
+.cs-button--attachment {
+	display: none;
+}
+
+.profile-img {
+	display: inline-block;
+	width: 90%;
+	height: 70%;
+	margin-top: 5px;
+}
+
+.btngp {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+}
+
+@media screen and (max-width: 767px) {
+	.chatHeader {
+		height: 50px;
+	}
+	.main-container {
+		width: 65%;
+	}
+	.chat-left-side {
+		width: 17%;
+	}
+	.chat-right-side {
+		width: 17%;
+	}
 }

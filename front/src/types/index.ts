@@ -5,7 +5,7 @@ export interface Props {
 	children: React.ReactNode;
 }
 
-export interface Nav {
+export interface NavType {
 	to: string;
 }
 

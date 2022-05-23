@@ -35,7 +35,7 @@ app.use(
 app.use(passport.initialize()); // passport 장착
 passportConfig(); // 모든 전략을 모아둔파일을 실행하기.
 
-app.use(router);
+app.use('/api', router);
 
 httpServer.listen(4000, async () => {
 	try {

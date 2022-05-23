@@ -6,7 +6,7 @@ export const ResponsiveTemplate = styled.div`
 	width: 1024px;
 	height: 100vh;
 	margin: 0 auto;
-	background-color: black;
+	overflow: hidden;
 
 	@media screen and (max-width: 1024px) {
 		width: 768px;

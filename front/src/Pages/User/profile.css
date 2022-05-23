@@ -15,8 +15,9 @@ h1 {
 }
 
 .profile-img-wrap {
-	border: solid 1px #bdb8b8;
+	border: dashed 1px #bdb8b8;
 	width: 80%;
+	height: 50%;
 	border-radius: 100%;
 	padding-top: 60px;
 	text-align: center;
@@ -26,6 +27,7 @@ h1 {
 
 .profile-img {
 	object-fit: cover;
+	width: ;
 }
 
 .profile-level {
@@ -89,4 +91,62 @@ h1 {
 	text-align: center;
 	margin-top: 20px;
 	cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+	.profile-thumb {
+		margin-right: 0px;
+		width: 60%;
+		height: 35%;
+		justify-content: flex-start;
+	}
+
+	.profile-img-wrap {
+		height: 65%;
+		border-radius: 100%;
+		padding-top: 35px;
+	}
+
+	.profile-level {
+		font-size: 15px;
+		margin-top: 15px;
+	}
+
+	.profile-detail {
+		width: 95%;
+		height: 80%;
+		justify-content: flex-start;
+	}
+
+	.profile-list {
+		padding: 5px 5px;
+		box-sizing: border-box;
+		font-size: 18px;
+		width: 100%;
+	}
+
+	.profile-article {
+		padding-right: 10px;
+		box-sizing: border-box;
+	}
+
+	.profile-content {
+		display: inline-block;
+		border-bottom: solid 1px #111;
+		width: 80%;
+		padding-bottom: 5px;
+	}
+
+	.link-group {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.link-btn {
+		margin-top: 10px;
+	}
+
+	.link-btn-red {
+		margin-top: 10px;
+	}
 }

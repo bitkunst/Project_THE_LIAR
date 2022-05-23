@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Responsive, ResponsiveTemplate } from '../../Components/Responsive';
+import { Title } from '../../Components/Title';
 import './profile.css';
 
 const ResponsiveFlex = styled(ResponsiveTemplate)`
@@ -10,13 +11,14 @@ const ResponsiveFlex = styled(ResponsiveTemplate)`
 
 	@media screen and (max-width: 767px) {
 		flex-direction: column;
+		align-items: center;
 	}
 `;
 
 const Profile = () => {
 	return (
 		<Responsive>
-			<h1>MY PROFILE</h1>
+			<Title>MY PROFILE</Title>
 			<ResponsiveFlex>
 				<div className="profile-thumb">
 					<div className="profile-img-wrap">

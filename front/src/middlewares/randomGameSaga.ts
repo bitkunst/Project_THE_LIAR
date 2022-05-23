@@ -7,16 +7,33 @@ import {
 } from '../reducers/randomGame';
 
 import { ActionType, AxiosResponse } from '../types';
-import { UserInfoType } from '../types/gameTypes';
+import { GameActionType } from '../types/gameTypes';
+import { ReducerType } from '../reducers';
+import { GameType } from '../types/gameTypes';
+import { useSelector } from 'react-redux';
 
-const gameAPI = (): boolean => {
-	return true;
+const gameAPI = (payload: GameActionType) => {
+	let result = false;
+	payload.mySocket.on('start', (data: any) => {
+		result = data.isStart;
+	});
+	return result;
 };
 
 function* gameReq(action: ActionType) {
+	console.log('hi');
+	console.log(action);
 	try {
-		const payload: UserInfoType = action.payload;
-		yield call<any>(gameAPI, payload);
+		const payload: GameActionType = action.payload;
+		console.log(payload);
+		const response: boolean = yield call<any>(gameAPI, payload);
+
+		if (response == true) {
+			yield put({
+				type: RANDOM_GAME_SUCCESS,
+				payload: 0,
+			});
+		}
 	} catch (err) {
 		yield put({
 			type: RANDOM_GAME_FAILURE,

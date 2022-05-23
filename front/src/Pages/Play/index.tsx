@@ -26,12 +26,6 @@ const Play = () => {
 			upgrade: false,
 			forceNew: true,
 		});
-		socket.on('welcome', () => {
-			socket.emit('myInfo', {
-				socket_id: socket.id,
-				nickname: userInfo.me.nickname,
-			});
-		});
 	}, []);
 	const dispatch = useDispatch();
 
@@ -39,8 +33,15 @@ const Play = () => {
 		e.preventDefault();
 		const howMany: any = document.querySelector('#howMany');
 		const value = howMany.options[howMany.selectedIndex].value;
-		console.log(value);
-		dispatch(random_game_request({ socket, howMany: value }));
+
+		dispatch(
+			random_game_request({ mySocket: socket, howMany: parseInt(value) })
+		);
+		socket.emit('myInfo', {
+			socket_id: socket.id,
+			nickname: userInfo.me.nickname,
+			howMany: parseInt(value),
+		});
 	};
 
 	return (

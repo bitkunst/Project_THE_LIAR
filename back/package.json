@@ -25,11 +25,5 @@
     "sequelize": "^6.19.1",
     "sequelize-cli": "^6.4.1",
     "socket.io": "^4.5.1"
-  },
-  "devDependencies": {
-    "eslint": "^8.15.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2"
   }
 }

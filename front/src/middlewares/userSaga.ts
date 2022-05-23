@@ -1,4 +1,4 @@
-import { takeLatest, takeEvery, call, put } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
 import {
 	LOCAL_LOGIN_REQUEST,
 	LOCAL_LOGIN_SUCCESS,

@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { ReducerType } from '../../reducers';
-import { UserType } from '../../types';
+import { UserType, Nav } from '../../types';
 import { local_login, local_logout } from '../../reducers/user';
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const Login = () => {
+const Login = ({ to }: Nav) => {
 	const user = useSelector<ReducerType, UserType>((state) => {
 		return state.user;
 	});
@@ -15,6 +15,7 @@ const Login = () => {
 	const [values, setValues] = useState(initialstate);
 	const [submit, setSubmit] = useState(false);
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const handleSubmit = (e: React.SyntheticEvent) => {
 		e.preventDefault();
@@ -30,6 +31,12 @@ const Login = () => {
 	const handleLogout = () => {
 		dispatch(local_logout('logout'));
 	};
+
+	useEffect(() => {
+		if (user.isLogin === true) {
+			navigate(to);
+		}
+	}, [user]);
 
 	return (
 		<>

@@ -26,12 +26,13 @@ const randomGame = handleActions(
 		[RANDOM_GAME_REQUEST]: (state, action: ActionType) =>
 			produce(state, (draft: GameType) => {
 				draft.isLoading = true;
-				draft.mySocket = action.payload.socket;
+				draft.mySocket = action.payload.mySocket;
 				draft.howMany = action.payload.howMany;
 			}),
 		[RANDOM_GAME_SUCCESS]: (state, action: ActionType) =>
 			produce(state, (draft: GameType) => {
 				draft.isStart = true;
+				draft.gameErr = action.payload;
 			}),
 		[RANDOM_GAME_FAILURE]: (state, action: ActionType) =>
 			produce(state, (draft: GameType) => {

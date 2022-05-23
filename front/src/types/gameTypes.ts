@@ -7,6 +7,11 @@ export interface GameType {
 	mySocket: any;
 }
 
+export interface GameActionType {
+	mySocket: any;
+	howMany: number;
+}
+
 export interface UserInfoType {
 	nickname: string;
 	level: number;

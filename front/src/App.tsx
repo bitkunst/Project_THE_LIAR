@@ -7,6 +7,7 @@ import Profile from './Pages/User/Profile';
 import Play from './Pages/Play';
 import Random from './Pages/Play/Random';
 import Friends from './Pages/Play/Friends';
+import Join from './Pages/User/Join';
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 					<Route path="/play" element={<Play />} />
 					<Route path="/play/friends" element={<Friends />} />
 					<Route path="/play/random" element={<Random />} />
+					<Route path="/user/join" element={<Join />} />
 				</Routes>
 			</Router>
 		</>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import {
@@ -13,6 +13,7 @@ import { MemProfile, Nick, Level } from '../../Components/PlayChat/MemProfile';
 import { Responsive, ResponsiveTemplate } from '../../Components/Responsive';
 import { InfoBoxRed, InfoBoxBlack } from '../../Components/InfoBox';
 import { BtnGrey, BtnBlue, BtnWhite } from '../../Components/Button';
+import { io } from 'socket.io-client';
 
 const ResponsiveFlex = styled(ResponsiveTemplate)`
 	display: flex;
@@ -21,6 +22,17 @@ const ResponsiveFlex = styled(ResponsiveTemplate)`
 `;
 
 const Random = () => {
+	const [reply, setReply] = useState('');
+
+	useEffect(() => {
+		const socket = io('http://localhost:4000/play/random');
+		console.log(socket);
+
+		socket.on('news', (data) => {
+			console.log(data.hello);
+		});
+	}, []);
+
 	const arr = [
 		'123',
 		'asdf',
@@ -34,6 +46,10 @@ const Random = () => {
 		'hi',
 		'asdf',
 	];
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setReply(e.target.value);
+	};
 
 	const Items = () => {
 		return arr.map((v, k) => {
@@ -78,7 +94,11 @@ const Random = () => {
 								<ul>{Items()}</ul>
 							</MessageList.Content>
 						</MessageList>
-						<MessageInput placeholder="내용을 입력해주세요" />
+						<MessageInput
+							placeholder="내용을 입력해주세요"
+							onChange={handleChange}
+							value={reply}
+						/>
 					</ChatContainer>
 				</MainContainer>
 				<div className="chat-right-side">

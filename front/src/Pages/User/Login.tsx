@@ -48,7 +48,6 @@ const Login = () => {
 					name="user_pw"
 					onChange={handleChange}
 				></input>
-
 				<br />
 				<input type="submit" value="로그인" disabled={submit}></input>
 				<a href="http://localhost:4000/auth/kakao">카카오로그인</a>

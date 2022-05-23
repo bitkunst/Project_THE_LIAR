@@ -7,6 +7,7 @@ const router = require('./routes');
 const app = express();
 const httpServer = http.createServer(app);
 const webSocket = require('./socket');
+const randomPlay = require('./randomPlay');
 const passport = require('passport');
 const passportConfig = require('./passport');
 const ws = SocketIO(httpServer, {
@@ -16,6 +17,7 @@ const ws = SocketIO(httpServer, {
 	},
 });
 webSocket(ws);
+randomPlay(ws);
 
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
@@ -30,7 +32,7 @@ app.use(
 app.use(passport.initialize()); // passport 장착
 passportConfig(); // 모든 전략을 모아둔파일을 실행하기.
 
-app.use(router);
+app.use('/api', router);
 
 httpServer.listen(4000, async () => {
 	try {

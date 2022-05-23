@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Props } from '../types';
+import { useNavigate } from 'react-router-dom';
 
 const ButtonTemp = styled.button`
 	width: 105px;

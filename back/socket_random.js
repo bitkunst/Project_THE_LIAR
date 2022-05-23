@@ -1,3 +1,4 @@
+let players3 = [];
 let players4 = [];
 let players5 = [];
 let players6 = [];
@@ -10,7 +11,14 @@ module.exports = (io) => {
 
 		socket.emit('welcome');
 		socket.on('myInfo', (data) => {
-			console.log(data);
+			const user = {
+				socketID: data.socket_id,
+				nickname: data.nickname,
+			};
+		});
+
+		socket.on('loading', () => {
+			console.log('오니?');
 		});
 	});
 

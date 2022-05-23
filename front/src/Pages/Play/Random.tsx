@@ -11,21 +11,12 @@ import {
 import './style.css';
 import MemProfile from '../../Components/PlayChat/MemProfile';
 import { Responsive, ResponsiveTemplate } from '../../Components/Responsive';
-import { io, Socket } from 'socket.io-client';
-import {
-	ServerToClientEvents,
-	ClientToServerEvents,
-	InterServerEvents,
-	SocketData,
-} from '../../types/socketTypes';
-import { useEffect } from 'react';
 
 const ResponsiveFlex = styled(ResponsiveTemplate)`
 	display: flex;
 	justify-content: space-between;
 	height: 90vh;
 `;
-let socket: any;
 
 const Random = () => {
 	const arr = [
@@ -83,17 +74,6 @@ const Random = () => {
 		'안녕하세요',
 		'안녕하세요',
 	];
-
-	useEffect(() => {
-		socket = io('http://localhost:4000/api/play/random', {
-			transports: ['websocket'],
-			upgrade: false,
-			forceNew: true,
-		});
-		socket.on('welcome', () => {
-			socket.emit('myInfo', { socket_id: socket.id, nickname: 'ingoo' });
-		});
-	}, []);
 
 	const Items = () => {
 		return arr.map((v, k) => {

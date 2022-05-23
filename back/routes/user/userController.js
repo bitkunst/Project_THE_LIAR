@@ -6,6 +6,7 @@ const passport = require('passport');
 
 const join = async (req, res) => {
 	const { user_id, user_pw, nickname } = req.body;
+	console.log(req.body)
 	try {
 		const check = await User.findOne({ where: { user_id } });
 		if (check) return res.json({ result: null, msg: '아이디 중복' });
@@ -29,11 +30,12 @@ const login = async (req, res) => {
 	const done = (error, user, info) => {
 		if (error || !user) return res.status(500).json({ error, user, info });
 		const { ...payload } = user.dataValues;
-		const { user_id, nickname, provider } = payload;
+		const { user_id, nickname, provider, level } = payload;
 		res.json({
 			user_id,
 			nickname,
 			provider,
+			level
 		});
 	};
 	passport.authenticate('local', { session: false }, done)(req, res);

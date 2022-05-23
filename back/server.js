@@ -9,6 +9,7 @@ const httpServer = http.createServer(app);
 const Socket1 = require('./socket_random');
 const passport = require('passport');
 const passportConfig = require('./passport');
+const cookieParser = require("cookie-parser");
 const io = SocketIO(httpServer, {
 	cors: {
 		origin: 'http://localhost:3000',
@@ -25,6 +26,7 @@ Socket1(randomRoom);
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 app.use(
 	cors({
 		origin: ['http://localhost:3000'],
@@ -32,8 +34,8 @@ app.use(
 	})
 );
 
-app.use(passport.initialize()); // passport 장착
-passportConfig(); // 모든 전략을 모아둔파일을 실행하기.
+app.use(passport.initialize()); 
+passportConfig();
 
 app.use('/api', router);
 

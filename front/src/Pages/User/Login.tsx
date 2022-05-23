@@ -56,8 +56,9 @@ const Login = ({ to }: NavType) => {
 				></input>
 				<br />
 				<input type="submit" value="로그인" disabled={submit}></input>
-				<a href="http://localhost:4000/auth/kakao">카카오로그인</a>
+				<a href="http://localhost:4000/api/auth/kakao">카카오로그인</a>
 			</form>
+			<Link to="/user/join">회원가입</Link>
 		</>
 	);
 };

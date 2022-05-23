@@ -14,6 +14,7 @@ export interface UserType {
 		user_id: string;
 		nickname: string;
 		provider: string;
+		level: number;
 	};
 	isLogin: boolean;
 	error: number;
